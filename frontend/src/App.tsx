@@ -1,12 +1,14 @@
-import { Button } from "./components/ui/button";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Layout from "./layouts/Layout";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      {" "}
-      <Button>Click me</Button>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout> </Layout>} />
+      <Route path="/user-profile" element={<span>user profile</span>} />
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
   );
-}
+};
 
 export default App;
